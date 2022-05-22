@@ -46,6 +46,7 @@ h1,h2{
 span{
     font-weight: 400;
     color: var(--Grayish-Blue);
+    display: block;
 }
 main > h1{
     grid-area: main_h1;
