@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+
+
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+
+}
+body{
+    background-color: var(--Very-Light-Gray);
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+   
+
+}
+main{
+  
+    padding: 0 2.66rem;
+    text-align: center;
+    max-width: 1150px;
+  
+    
+}
+h1,h2{
+    font-size: 1.5rem;
+    color: var(--Very-Dark-Blue);
+    padding: .5rem 0;
+    font-weight: 600;
+}
+span{
+    font-weight: 400;
+    color: var(--Grayish-Blue);
+}
+main > h1{
+    grid-area: main_h1;
+    max-width: 25ch;
+}
+main > p{
+    margin-bottom: 5rem;
+    max-width: 35ch;
+    grid-area: main_p;
+}
+
+section{
+    max-width: 23rem;
+    text-align: left;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    box-shadow: 0px 14px 20px -5px rgba(218,228,240,1);
+    background-color: white;
+  
+}
+
+p{
+    font-weight: 400;
+    color: var(--Grayish-Blue);
+    
+}
+img{ display: block;
+    margin-left: auto;
+    padding-top: 3rem;
+    
+}
+section:nth-of-type(1){
+    border-top: 5px solid var(--Cyan);
+    grid-area: article_1;
+}
+section:nth-of-type(2){
+    border-top: 5px solid var(--Red);
+    grid-area: article_2;
+}
+section:nth-of-type(3){
+    border-top: 5px solid var(--Orange);
+    grid-area: article_3;
+}
+section:nth-of-type(4){
+    border-top: 5px solid var(--Blue);
+    grid-area: article_4;
+}
+
+@media (min-width:600px) {
+    main{
+        display: grid;
+        gap: 1.4rem; 
+        justify-items: center;
+        grid-auto-columns: minmax(auto,max-content);
+        grid-template-areas:  "main_h1    main_h1    main_h1"
+                              "main_p    main_p      main_p "
+                              " .        article_2        . "
+                              "article_1 article_2 article_4"
+                              "article_1 article_3 article_4"
+                              " .        article_3        . "  ;
+        
+    }
+    main > p{
+        margin-bottom: 0;
+        max-width: 55ch;
+        grid-area: main_p;
+    }
+    main > h1{
+        max-width: 35ch;
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+}
